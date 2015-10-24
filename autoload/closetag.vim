@@ -241,7 +241,8 @@ fun! closetag#CloseTagFun()
                 if b:haveAtt == 0
                     call s:Callback (b:tagName, b:html_mode)
                 en
-                exe "normal! a</" . b:tagName . ">\<Esc>F<"
+                exe "normal! a\n \n</" . b:tagName . ">\<Esc>F<"
+                call cursor(line('.') - 1, col('.') + 4)
                 start
                 retu
             en
