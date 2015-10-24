@@ -28,7 +28,7 @@ if g:closetag_filenames == ""
     finish
 endif
 
-exec "au BufNewFile,Bufread " . g:closetag_filenames . " inoremap <silent> <buffer> > ><Esc>:call <SID>CloseTagFun()<Cr>"
+" exec "au BufNewFile,Bufread " . g:closetag_filenames . " inoremap <silent> <buffer> > ><Esc>:call <SID>CloseTagFun()<Cr>"
 
 " Script rgular expresion used. Documents those nasty criters      {{{1
 let s:NoSlashBeforeGt = '\(\/\)\@\<!>'
@@ -193,7 +193,7 @@ fun! s:TagUnderCursor()
     retu l:haveTag
 endf
 
-fun! s:CloseTagFun()
+fun! closetag#CloseTagFun()
     if !exists("b:did_ftplugin_closetag")
         call s:InitBuf()
     en
